@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola mundo</title>
+    <style>
+        :root {
+            --seconds: 5s;
+        }
+        .container {
+            display: flex;
+            /* justify-content: center; */
+            margin-top: 5rem;
+        }
+
+        .container__box {
+            position: relative;
+            width: 20rem;
+            height: 20rem;
+            border-radius: 50%;
+            background-color: orange;
+            background: radial-gradient(circle at right top, hsla(360, 100%, 100%, 1), hsla(0, 0%, 50%, 1));
+            margin-left: 2rem;
+            animation: play var(--seconds) infinite;
+            transform: rotate(0deg);
+            z-index: 999;
+        }
+
+        .container__box-shadow {
+            z-index: -1;
+            display: block;
+            position: absolute;
+            top: 45%;
+            left: 2%;
+            content: '';
+            width: 20rem;
+            height: 4rem;
+            border-radius: 50%;
+            background: radial-gradient(hsla(0, 0%, 22%, 1), hsla(0, 0%, 48%, 0.5), hsla(360, 100%, 100%, 1) 70% 100%);
+            animation: play2 var(--seconds) infinite;
+        }
+
+        @keyframes play {
+            0% {
+                left: 0%;
+            }
+
+            100% {
+                left: 60%;
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes play2 {
+            0% {
+                left: 2%;
+            }
+
+            100% {
+                left: 62%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="container__box">
+
+        </div>
+        <div class="container__box-shadow">
+
+        </div>
+    </div>
+</body>
+</html>
